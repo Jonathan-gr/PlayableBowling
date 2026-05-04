@@ -14,6 +14,7 @@ public class FingerHint : MonoBehaviour
     private void Start()
     {
         StartCoroutine(AnimateFinger());
+
     }
 
     private void Update()

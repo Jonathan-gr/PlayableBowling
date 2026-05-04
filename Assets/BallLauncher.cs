@@ -10,12 +10,15 @@ public class BallLauncher : MonoBehaviour
 
     public float maxDragDistance = 3f;
     public float forceMultiplier = 20f;
+    private Ball ball;
 
+    [System.Obsolete]
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         startPos = transform.position;
+        ball = GetComponentInChildren<Ball>();
 
         // lock rotation and vertical movement so it rolls, doesn't fly
 
@@ -54,6 +57,7 @@ public class BallLauncher : MonoBehaviour
 
             launched = true;
             isDragging = false;
+            ball.OnThrow();
         }
     }
 }
