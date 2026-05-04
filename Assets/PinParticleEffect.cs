@@ -12,6 +12,7 @@ public class Pin : MonoBehaviour
         {
             hit = true;
             Instantiate(hitEffectPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            CameraShake.Instance.Shake();
         }
     }
 }
