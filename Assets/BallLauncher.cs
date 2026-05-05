@@ -8,6 +8,7 @@ public class BallLauncher : MonoBehaviour
     private bool launched = false;
     private bool isDragging = false;
 
+
     public float maxDragDistance = 3f;
     public float forceMultiplier = 20f;
     private Ball ball;
@@ -58,6 +59,7 @@ public class BallLauncher : MonoBehaviour
             launched = true;
             isDragging = false;
             ball.OnThrow();
+
         }
     }
 }

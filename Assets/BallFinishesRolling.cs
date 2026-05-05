@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -5,9 +6,12 @@ public class Ball : MonoBehaviour
     private Rigidbody rb;
     private bool hasThrown = false;
     private bool ctaShown = false;
-    public float speedThreshHold = 0.1f;
+    public float speedThreshold = 0.1f;
     private float checkDelay = 0f;
-    public float delayBeforeCheck = 0.5f; // wait 0.5s after throw before checking velocity
+    public float delayBeforeCheck = 0.5f;
+    public float ctaDelay = 2f; // ← seconds to wait before showing CTA
+
+    [SerializeField] private BowlingGameManager gameManager;
 
     void Start()
     {
@@ -20,20 +24,22 @@ public class Ball : MonoBehaviour
         {
             checkDelay += Time.deltaTime;
 
-            if (checkDelay > delayBeforeCheck) // only start checking after delay
+            if (checkDelay > delayBeforeCheck)
             {
-                if (rb.linearVelocity.magnitude < speedThreshHold)
+                if (rb.linearVelocity.magnitude < speedThreshold)
                 {
                     ctaShown = true;
-                    CTAButton.Instance.ShowCTA();
+                    gameManager.OnBallThrown();
+
                 }
             }
         }
     }
 
+
     public void OnThrow()
     {
         hasThrown = true;
-        checkDelay = 0f; // reset delay counter
+        checkDelay = 0f;
     }
 }
