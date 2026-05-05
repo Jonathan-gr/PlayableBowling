@@ -5,6 +5,8 @@ public class BowlingGameManager : MonoBehaviour
 {
     [SerializeField] private PinManager pinManager;
 
+    public GameObject bannerPrefab;
+
     private int totalScore = 0;
 
     public void OnBallThrown()
