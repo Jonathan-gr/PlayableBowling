@@ -6,6 +6,7 @@ public class BowlingGameManager : MonoBehaviour
     [SerializeField] private PinManager pinManager;
 
     public GameObject bannerPrefab;
+    public bool bannerSpawned = false;
 
     private int totalScore = 0;
 
@@ -23,12 +24,24 @@ public class BowlingGameManager : MonoBehaviour
 
         // Show banner first
         ScoreBanner.Instance.ShowBanner(knockedCount, totalScore);
+        SpawnBanner();
 
         if (knockedCount == 10)
             TriggerStrikeEffect();
 
         // Show CTA after banner has been visible a moment
         StartCoroutine(ShowCTAAfterBanner());
+    }
+    void SpawnBanner()
+    {
+        if (bannerSpawned) return;
+
+        bannerSpawned = true;
+        Instantiate(bannerPrefab, new Vector3(0, 0), Quaternion.identity);
+        Instantiate(bannerPrefab, new Vector3(-5, 0), Quaternion.identity);
+        Instantiate(bannerPrefab, new Vector3(5, 0), Quaternion.identity);
+
+
     }
 
     private IEnumerator ShowCTAAfterBanner()
