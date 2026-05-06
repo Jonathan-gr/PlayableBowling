@@ -20,6 +20,7 @@ public class CTAButton : MonoBehaviour
     public void ShowCTA()
     {
         ctaButton.SetActive(true);
+        ctaButton.GetComponent<ShakeButton>().StartShaking();
     }
 
     public void OnCTAClicked()

@@ -1688,8 +1688,8 @@ GameObject:
   - component: {fileID: 681670573}
   - component: {fileID: 681670574}
   - component: {fileID: 681670575}
-  - component: {fileID: 681670576}
   - component: {fileID: 681670577}
+  - component: {fileID: 681670578}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1740,19 +1740,6 @@ MonoBehaviour:
   startPos: {x: -6.48, y: -263.3}
   endPos: {x: -28.5, y: -487.3}
   speed: 1.5
---- !u!114 &681670576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681670572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2aaeb0b3b882a24f89e942ab226c5cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ctaButton: {fileID: 881698675}
 --- !u!114 &681670577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,6 +1754,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinManager: {fileID: 1441544244}
   bannerPrefab: {fileID: 5653396362343898754, guid: 24a3312b06dd9cf42a1e8e5e45ae8766, type: 3}
+  bannerSpawned: 0
+--- !u!114 &681670578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681670572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2aaeb0b3b882a24f89e942ab226c5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ctaButton: {fileID: 881698675}
 --- !u!1 &697914437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 167.79}
+  m_AnchoredPosition: {x: 164, y: 167.79}
   m_SizeDelta: {x: 912.1, y: 53.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &757836221
@@ -2259,6 +2260,7 @@ GameObject:
   - component: {fileID: 881698679}
   - component: {fileID: 881698678}
   - component: {fileID: 881698677}
+  - component: {fileID: 881698680}
   m_Layer: 5
   m_Name: DownloadButton
   m_TagString: Untagged
@@ -2283,7 +2285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -385.6}
   m_SizeDelta: {x: 353.7, y: 142.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881698677
@@ -2330,7 +2332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 681670576}
+      - m_Target: {fileID: 681670578}
         m_TargetAssemblyTypeName: CTAButton, Assembly-CSharp
         m_MethodName: OnCTAClicked
         m_Mode: 1
@@ -2380,6 +2382,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881698675}
   m_CullTransparentMesh: 1
+--- !u!114 &881698680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881698675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fe50db8cc9b4941b940118de059aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.25
+  shakeStrength: 15
+  shakeSpeed: 25
+  pauseBetweenShakes: 2
+  flickerColors:
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  flickerSpeed: 0.01
 --- !u!1 &983014547
 GameObject:
   m_ObjectHideFlags: 0

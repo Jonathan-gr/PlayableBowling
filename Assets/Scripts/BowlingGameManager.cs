@@ -20,7 +20,6 @@ public class BowlingGameManager : MonoBehaviour
         int points = knockedCount * 10;
         totalScore += points;
 
-        Debug.Log($"Pins knocked: {knockedCount} | Score: {totalScore}");
 
         // Show banner first
         ScoreBanner.Instance.ShowBanner(knockedCount, totalScore);
@@ -40,6 +39,7 @@ public class BowlingGameManager : MonoBehaviour
         Instantiate(bannerPrefab, new Vector3(0, 0), Quaternion.identity);
         Instantiate(bannerPrefab, new Vector3(-5, 0), Quaternion.identity);
         Instantiate(bannerPrefab, new Vector3(5, 0), Quaternion.identity);
+        Instantiate(bannerPrefab, new Vector3(0, 0, -4), Quaternion.identity);
 
 
     }
